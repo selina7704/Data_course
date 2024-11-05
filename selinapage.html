@@ -1,44 +1,122 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <style>
-            h1 {color: lightseagreen}
-            p{font-family:Arial, Helvetica, sans-serif}
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        
+        <style>          
+            body {
+            font-family: Arial, sans-serif;
+            color: #4A4A4A; 
+            background-color: #FFFAF3; 
+            background: linear-gradient(to bottom right, #FFFAF3, #a8cde6);
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            transition: background 0.5s;
+            }
+
+            header {
+            font-family: Arial, sans-serif;
+            width: 100%;
+            padding: 20px 0;
+            text-align: center;
+            background-color: #a8cde6; 
+            box-shadow: 0px 4px 10px rgba(233, 229, 229, 0.2);
+            background: linear-gradient(to bottom right, #FFFAF3,  #a8cde6);
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            }
+            header h1 {
+            font-size: 2.0em;
+            margin: 0 0 0 10px;
+            color: #4A4A4A;
+            }
+
+
+            nav {margin: 20px 0; text-align: center;}
+            nav img {
+            border-radius: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            section {
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            margin: 20px 0;
+            }
+            
+            #timetable {
+            display: flex;
+            justify-content: center; 
+            margin-top: 20px;
+            }   
+            footer {
+            width: 100%;
+            padding: 10px 0;
+            text-align: center;
+            background-color: #a8cde6;
+            color: #4A4A4A;
+            }
+
+            .header-icon {
+                color: white;
+                font-size: 1.5em;
+            }
         </style>
+
         <title> Eunbi's Homepage </title>
         <meta charset="UTF-8">
     </head>
+
     <body>
-        <h1> Eunbi(Selina)'s first webpage </h1>
-        <img src="myhomepagephoto.jpg" width="320" height="450" alt="Me"> 
-        <p>안녕하세요 저는 노은비입니다!</p>
+        <header>
+            <i class="nature-icon fas fa-cloud header-icon"style="margin-right: 10px;"></i>
+            <h1>Eunbi(Selina)'s first webpage </h1>
+        </header>
         
-        <hr/>
-        <h3>나는 :) </h3>
-        <ul>
-            <li>하고 싶은 일을 찾아 관심가던 분야, 데이터 분석/엔지니어링 공부중입니다! </li>
-            <li>직업 목표는 뉴질랜드/호주에서 데이터 엔지니어가 되는것!</li>
-            <li>산책, 러닝, 하이킹, 여행, 쇼셜라이징 좋아합니다!</li>
-            <li>너무 집에만 있는거 별로 안 좋아해요..지루해요..</li>
-        </ul>
+        <nav>
+            <img src="myhomepagephoto.jpg" width="320" height="450" alt="Me"> 
+        </nav>
+        
+        <section id="aboutme">
+            <hr/>
+            <h3>나는 :) </h3>
+            <ul>
+                <li>하고 싶은 일을 찾아 관심가던 분야, 데이터 분석/엔지니어링 공부중입니다! </li>
+                <li>직업 목표는 뉴질랜드/호주에서 데이터 엔지니어가 되는것!</li>
+                <li>산책, 러닝, 하이킹, 여행, 쇼셜라이징 좋아합니다!</li>
+                <li>너무 집에만 있는거 별로 안 좋아해요..</li>
+            </ul>
+        </section>
 
-        <table border ='1'>
-            <caption> 시간표 </caption>
-            <tr>
-                <td>월-금</td>
-                <td>9am-6pm수업</td>
-            </tr>
-            <tr>
-                <td>주말</td>
-                <td>공부&독서&쇼셜라이징</td>
-            </tr>
-        </table>
-
+        <section id = "timetable">
+            <table border ='1'>
+                <caption><b>시간표</b></caption>
+                <tr>
+                    <th>요일</th>
+                    <th>일정</th>
+                </tr>
+                <tr>
+                    <td>월-금</td>
+                    <td>9am-6pm수업</td>
+                </tr>
+                <tr>
+                    <td>토-일</td>
+                    <td>공부&독서&쇼셜라이징</td>
+                </tr>
+            </table>
+        </section>
         <hr/>
-        Email me if you would like to connect with me
-        <a href="mailto:selina7704@naver.com?subject=Hi Selina" >selina7704@naver.com</a>
-        <br>
-        or visit me <a href="https://github.com/selina7704">Selina's Github</a>
-            
+        <footer>
+            <p>Visit me at:</p>
+            <a href="https://github.com/selina7704" class="icon"><i class="fab fa-github"></i> GitHub</a> 
+            <br>
+            <a href="https://www.linkedin.com/in/eunbi-ro-84405a145/" class="icon"><i class="fab fa-linkedin"></i> LinkedIn</a>
+            <p>&copy; 2024 Selina's 개인 홈페이지. All rights reserved.</p>
+        </footer>    
     </body>
 </html>
