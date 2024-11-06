@@ -14,7 +14,7 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            transition: background 0.5s;
+            transition: background-color 0.3s, color 0.3s;
             }
 
             header {
@@ -23,11 +23,12 @@
             padding: 20px 0;
             text-align: center;
             background-color: #a8cde6; 
-            box-shadow: 0px 4px 10px rgba(233, 229, 229, 0.2);
+            box-shadow: 0px 4px 10px rgba(228, 225, 225, 0.945);
             background: linear-gradient(to bottom right, #FFFAF3,  #a8cde6);
             display: flex;
             justify-content: center; 
             align-items: center; 
+            transition: background-color 0.3s, color 0.3s;
             }
             header h1 {
             font-size: 2.0em;
@@ -45,7 +46,7 @@
             section {
             width: 90%;
             max-width: 600px;
-            text-align: center;
+            text-align: left;
             margin: 20px 0;
             }
             
@@ -57,14 +58,46 @@
             footer {
             width: 100%;
             padding: 10px 0;
+            display: fixed;
             text-align: center;
             background-color: #a8cde6;
             color: #4A4A4A;
+            transition: background-color 0.3s, color 0.3s;
             }
 
             .header-icon {
                 color: white;
                 font-size: 1.5em;
+            }
+            .dark-mode {
+                background: linear-gradient(to bottom right, #1a1a1a, #2c2c2c);
+                color: #ffffff;
+            }
+
+            .dark-mode header, .dark-mode footer, .dark-mode nav {
+                background: linear-gradient(to bottom right, #2c2c2c, #1a1a1a);
+                color: #ffffff;
+            }
+
+            .dark-mode nav img {
+                box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.1);
+            }
+
+            .dark-mode #timetable table {
+                border-color: #ffffff;
+            }
+
+            #darkModeToggle {
+                background: none;
+                border: none;
+                color: #4A4A4A;
+                font-size: 1.5em;
+                cursor: pointer;
+                transition: color 0.3s;
+            }
+
+            .dark-mode #darkModeToggle {
+                color: #ffffff;
             }
         </style>
 
@@ -76,12 +109,15 @@
         <header>
             <i class="nature-icon fas fa-cloud header-icon"style="margin-right: 10px;"></i>
             <h1>Eunbi(Selina)'s first webpage </h1>
+            <button id="darkModeToggle" style="margin-left: 10px;">
+                <i class="fas fa-moon"></i>
+            </button>
         </header>
         
         <nav>
-            <img src="myhomepagephoto.jpg" width="320" height="450" alt="Me"> 
+            <img src="myhomepagephoto.jpg" width="320" height="450" alt="Me">
+            <p>안녕하세요! 산 타는 노은비 입니다. </p>
         </nav>
-        
         <section id="aboutme">
             <hr/>
             <h3>나는 :) </h3>
@@ -117,6 +153,50 @@
             <br>
             <a href="https://www.linkedin.com/in/eunbi-ro-84405a145/" class="icon"><i class="fab fa-linkedin"></i> LinkedIn</a>
             <p>&copy; 2024 Selina's 개인 홈페이지. All rights reserved.</p>
-        </footer>    
+        </footer>
+        <script>  
+            // 타이핑 애니메이션
+            document.addEventListener('DOMContentLoaded', function() {
+                let textElement = document.querySelector('body p');
+                let text = textElement.textContent;
+                textElement.textContent = '';
+                let index = 0;
+
+                function typeEffect() {
+                    if (index < text.length) {
+                        textElement.textContent += text.charAt(index);
+                        index++;
+                        setTimeout(typeEffect, 100); // 타이핑 속도 조절 (ms 단위)
+                    }
+                }
+
+                typeEffect();
+            });  
+            // // 다크 모드 토글
+            // document.getElementById('darkModeToggle').addEventListener('click', function() {
+            //     document.body.classList.toggle('dark-mode');
+            // });
+
+
+            document.addEventListener('DOMContentLoaded', function() {
+                // Existing typing animation code...
+
+                // Dark mode toggle
+                const darkModeToggle = document.getElementById('darkModeToggle');
+                const body = document.body;
+                const icon = darkModeToggle.querySelector('i');
+
+                darkModeToggle.addEventListener('click', function() {
+                    body.classList.toggle('dark-mode');
+                    if (body.classList.contains('dark-mode')) {
+                        icon.classList.remove('fa-moon');
+                        icon.classList.add('fa-sun');
+                    } else {
+                        icon.classList.remove('fa-sun');
+                        icon.classList.add('fa-moon');
+                    }
+                });
+            });
+        </script>
     </body>
 </html>
