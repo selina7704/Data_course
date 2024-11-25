@@ -65,6 +65,6 @@ conn.close()
 
 print('데이터베이스에 저장 완료')
 
-# 5. CSV로 저장 (선택사항)
+# 5. CSV로 저장
 news_df.to_csv('naver_news.csv', index=False, encoding='utf-8-sig')
-print('CSV 파일로 저장 완료')
+print('저장 완료')
